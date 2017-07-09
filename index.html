@@ -3,13 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<title>jQuery Sketch</title>
+
+		<!--Javascript & jQuery Imports /-->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 		<script src='js/main.js'></script>
+		<script type="text/javascript" src="js/farbtastic.js"></script>
+
+
+		<!--CSS Imports /-->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="CSS/farbtastic.css" type="text/css" />
+
+		<!--Font Imports /-->
+		<link href="https://fonts.googleapis.com/css?family=Patua+One|Revalia" rel="stylesheet">
+
 	</head>
 	<body>
+	<div id = 'title'>
+	ZACH<span style='color: #F85658'>'</span>S PIXELMAKER</div>
+	</div>
+
+	<div class = 'menu'>
+		<div class = 'color-section'>
+    	<form><p class="ui-corner-all" style="padding:12px;"> Color:  <input type='text' id='color' name='color' value='#123456' /> </form>
+		<div id='colorpicker'></div>
+		</p>
+		</div>
+	</div>
+
 	<div id = 'container'>
 	</div>
+
 	</body>
 </html>
