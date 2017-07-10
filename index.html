@@ -5,19 +5,24 @@
 		<title>jQuery Sketch</title>
 
 		<!--Javascript & jQuery Imports /-->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-		<script src='js/main.js'></script>
-		<script type="text/javascript" src="js/farbtastic.js"></script>
-
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js""></script>
 
 		<!--CSS Imports /-->
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="CSS/farbtastic.css" type="text/css" />
-
 		<!--Font Imports /-->
 		<link href="https://fonts.googleapis.com/css?family=Patua+One|Revalia" rel="stylesheet">
+
+				<!--BOOTSTRAP IMPORTS /-->
+		<script src='js/bootstrap-colorpicker.min.js'></script>
+		<link rel='stylesheet' href='CSS/bootstrap-colorpicker.min.css'></link>
+		<link rel='stylesheet' href='CSS/bootstrap-colorpicker.min.css.map'></link>
+		<script src='js/main2.js'></script>
 
 	</head>
 	<body>
@@ -26,14 +31,33 @@
 	</div>
 
 	<div class = 'menu'>
+
 		<div class = 'color-section'>
-    	<form><p class="ui-corner-all" style="padding:12px;"> Color:  <input type='text' id='color' name='color' value='#123456' /> </form>
-		<div id='colorpicker'></div>
-		</p>
+			<p class="subtitle"> Color </p>
+			<div id="color-picker" class="input-group colorpicker-component">
+    			<input type="text" value="#000000" class="form-control" />
+    			<span class="input-group-addon"><i></i></span>
+			</div>
 		</div>
+		<div class = 'canvas-section'>
+			<p class="subtitle"> Canvas </p>
+			<form action="#">
+ 			<fieldset>
+		    <label for="size">Select a size</label>
+		    <select name="size" id="size">
+		      <option value = '1'>16 x 16</option>
+		      <option value = '2'>32 x 32</option>
+		      <option value = '3' selected="selected">64 x 64</option>
+		      <option value = '4'>256 x 192</option>
+		      <option value = '5'>640 x 360</option>
+		    </select>
+		    </fieldset>
+		    </form>
+		</div>
+
 	</div>
 
-	<div id = 'container'>
+	<div class = 'container'>
 	</div>
 
 	</body>

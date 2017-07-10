@@ -1,30 +1,35 @@
+function drawGrid (height, width){
+		$('.container').empty();
+		for (i=0; i < height; i++){
+   			$('<div>').addClass('square-line').appendTo(".container");
+   		};
+    
+    	var squareWidth = 800/width;
+    	for (j=0; j < width; j++){
+    		$('<div>').addClass('square').css("width",squareWidth).css("height",squareWidth).appendTo(".square-line");	
+		};
+
+	}
+
+
 $(document).ready(function(){
+// Initial Grid DRAWING
 
-	// CREATE GRID
-	var px = 10;
-	var py = 10;
-	var pxy = px * py;  //Pixel X and Y area size
-	var x = 120;
-	var y = 120;        //Grid X and Y size
+	var height = 64;
+	var width = 64;
 
-	$('#container').css({'width': x});
-    $('#container').css({'height': y});
-	for (i = 0; i<((x*y)/pxy); i++) {
-		var board = document.createElement('div');
-		board.className = 'grid';
-		board.addId = 'color'
-		$('.grid').css({'width': px})
-		$('.grid').css({'height': py})
-		document.getElementById('container').appendChild(board);
-	};
+	drawGrid (height,width);
+
 
 	//Starting Color
 	var choice = '#000';
-	$('.grid').hover(function(){
+	function hovering (){
+	$('.square').hover(function(){
     	$(this).click(function(){
             $(this).css('background-color', choice);
 		});
 	});
+}
 
   	// HOVER AND CLICK FUNCTION //
   	    $('#color-picker').colorpicker().on('changeColor', function(ev){
@@ -54,8 +59,7 @@ $(document).ready(function(){
     		var x = 640;
     		var y = 360;
     	}                             // Establishes grid X and Y coords
-    	$('#container').css({'width': x});
-    	$('#container').css({'height': y});
+    	drawGrid (x, y);
 
 
 	});
