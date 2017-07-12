@@ -13,7 +13,7 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 	font-family:'Patua One', cursive;
-	color: #FFF;
+    color: #f85658;
 }
 
 #title {
@@ -70,6 +70,22 @@ select, input:focus, textarea:focus {
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#warning {
+	margin-top: 2%;
+	color: #666;
+}
+
+button {
+	margin-top: 5%;
+	margin-right: 2%;
+	padding: .2em;
+	border-color: #666;
+    border-radius: .3em;
+}
+canvas {
+	border: #FFF solid thin;
+
 }
 #container {
 	height: 800px;

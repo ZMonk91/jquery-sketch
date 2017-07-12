@@ -6,14 +6,16 @@
 
 		<!--Javascript & jQuery Imports /-->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js""></script>
+		<script type="text/javascript" language="javascript" src="js/html2canvas.min.js"></script>
+		 <script type="text/javascript" language="javascript" src="js/html2canvas.svg.min.js"></script>
 
 		<!--CSS Imports /-->
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" href="js/jquery-ui.css">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css">
 		<!--Font Imports /-->
 		<link href="https://fonts.googleapis.com/css?family=Patua+One|Revalia" rel="stylesheet">
@@ -48,16 +50,27 @@
 		      <option value = '1'>16 x 16</option>
 		      <option value = '2'>32 x 32</option>
 		      <option value = '3' selected="selected">64 x 64</option>
-		      <option value = '4'>256 x 192</option>
-		      <option value = '5'>640 x 360</option>
+		      <option value = '4'>128 x 128</option>
+		      <option value = '5'>256 x 256</option>
 		    </select>
 		    </fieldset>
 		    </form>
+		    <div id="warning">
+  				<p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
+ 			 Changing the canvas size will cause everything to erase.</p>
+			</div>
 		</div>
-
+		<div class = 'preview'>
+		<p> LIVE PREVIEW </p>
+		<p> - coming soon - </p>
+		<canvas> <p>COMING SOON </p></canvas>
+		</div>
+		<div class = 'save-buttons'>
+		<button id='restart'> Restart </button> <button id='save'>Save Picture</button>
+		</div>
 	</div>
 
-	<div class = 'container'>
+	<div class = 'container' id='thehtml'>
 	</div>
 
 	</body>

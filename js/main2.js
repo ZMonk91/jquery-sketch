@@ -1,3 +1,5 @@
+$(document).ready(function(){
+// Generate a grid
 function drawGrid (height, width){
 		$('.container').empty();
 		for (i=0; i < height; i++){
@@ -10,60 +12,93 @@ function drawGrid (height, width){
 		};
 
 	}
+// Color while hovering
+		var choice = '#000';
+		var isDown = false;
+		$(document).mousedown(function(){
+			isDown = true;
+		})
+		.mouseup(function(){
+			isDown = false;
+		});
+
+		function hovering (){
+	$('.square').hover(function(){
+    	if (isDown){
+            $(this).css('background-color', choice);
+    	}
+    	$(this).click(function(){
+    		$(this).css('background-color', choice);
+    	})
+		});
+	};
 
 
-$(document).ready(function(){
 // Initial Grid DRAWING
-
 	var height = 64;
 	var width = 64;
-
 	drawGrid (height,width);
+	hovering();
+    $('Canvas').css({'width': height});
+    $('Canvas').css({'height': width});
 
 
-	//Starting Color
-	var choice = '#000';
-	function hovering (){
-	$('.square').hover(function(){
-    	$(this).click(function(){
-            $(this).css('background-color', choice);
-		});
-	});
-}
 
-  	// HOVER AND CLICK FUNCTION //
+  	// Color selection  
   	    $('#color-picker').colorpicker().on('changeColor', function(ev){
         choice = ev.color.toHex();
         document.body.style.setProperty('--main-color', choice);
 	});
+
+
+
   	// Canvas Size Button
 	$("#size").change(function() {
     	var selected = $(this).val(); 		// Grabs value of selection
     	if (selected == 1){
-    		var x = 16;
-    		var y = 16;
+    		var width = 16;
+    		var height = 16;
     	}
     	else if (selected == 2) {
-    		var x = 32;
-    		var y = 32;
+    		var width = 32;
+    		var height = 32;
     	}
     	else if (selected == 3) {
-    		var x = 64;
-    		var y = 64;
+    		var width = 64;
+    		var height = 64;
     	}
     	else if (selected == 4) {
-    		var x = 256;
-    		var y = 192;
+    		var width = 128;
+    		var height = 128;
     	}
     	 else if (selected == 5) {
-    		var x = 640;
-    		var y = 360;
-    	}                             // Establishes grid X and Y coords
-    	drawGrid (x, y);
+    		var width = 256;
+    		var height = 256;
+    	}                            
+    	 // Establishes grid X and Y coords
+    	drawGrid(width,height);
+    	hovering();
+    	$('Canvas').css({'width': width});
+    	$('Canvas').css({'height': height});
+	});
+		//Canvas attempt
 
+	function grabCanvas() {$('#thehtml').html2canvas({
+    onrendered : function(canvas) {
+    var img = canvas.toDataURL();
+    // img now contains an IMG URL, you can do various things with it, but most simply:
+        $('<img>',{src:img}).appendTo($('body'));
+            }
+        });
+	};
 
+	// buttons
+	$('#save').click(function(){
+		alert('Feature coming soon. For now take a screenshot.');
 	});
 
-	// COLOR PICKER 
-
+	$('#restart').click(function(){
+		drawGrid(width,height)
+		hovering()
+	});
 });
